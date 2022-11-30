@@ -1,13 +1,14 @@
 import React , { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import start from "../screens/start/start";
+import { Start } from '../screens/start/start';
 
 
 export default function RouteManager() {
     
-    const [firststart, setfirststart] = useEffect(Boolean);
-
-    useEffect(() => {
+    const [firststart, setfirststart] = useState(Boolean);
+    AsyncStorage.clear()
+    
+    useEffect(() => {        
         AsyncStorage.getItem('@firststart').then(value => {
             if (value === null) /* Never was Opened */  {
                 AsyncStorage.setItem('@firststart', value = 'true'); 
@@ -23,10 +24,10 @@ export default function RouteManager() {
 
     if (firststart == true) {
         /* Start -> First load */
-        start();
+        Start();
     } else {
         /* Load Data -> Show Home Page */
-        
+        Start();
     }
 
 }
