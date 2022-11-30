@@ -1,8 +1,8 @@
 import { View, Text, Image } from "react-native";
 import React, { useEffect, useState } from "react";
-import style from './start-style';
+import style from "./start-style";
 
-export default function start(status) {
+export default function start() {
     return (
         <View style={style.container}>
             <Image source={require('../../assets/weatherlogo.png')} style={style.logo} />
@@ -10,5 +10,5 @@ export default function start(status) {
                 Portugal Weather
             </Text>          
         </View>
-    );
+    );    
 }

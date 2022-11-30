@@ -1,5 +1,7 @@
 import React , { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import start from "../screens/start/start";
+
 
 export default function RouteManager() {
     
@@ -20,9 +22,11 @@ export default function RouteManager() {
     console.log(firststart);
 
     if (firststart == true) {
-        /* First Start -> First load */
+        /* Start -> First load */
+        start();
     } else {
         /* Load Data -> Show Home Page */
+        
     }
 
 }
