@@ -14,7 +14,7 @@ export default function RouteManager() {
                 AsyncStorage.setItem('@firststart', value = 'true'); 
                 setfirststart(true);
             } else /* Was Opened */ {
-                setfirststart(false);
+                setfirststart(true);
             }
         })
     }, [])
